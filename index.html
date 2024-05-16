@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+		<title>Expenses chart component</title>
+
+		<link rel="stylesheet" href="./styles/reset.css" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link rel="stylesheet" href="./styles/style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<div class="balance">
+					<h4 class="balance-title">My balance</h4>
+					<span class="balance-value">$921.48</span>
+				</div>
+				<img src="./images/logo.svg" alt="Logo" class="logo" />
+			</header>
+
+			<main>
+				<div class="spending-chart">
+					<h3 class="spending-chart-title">Spending - Last 7 days</h3>
+					<div class="spending-chart-items">
+						<div class="spending-chart-item">
+							<div class="spending-chart-item-column" data-content="$17.45"></div>
+							<h5 class="spending-chart-item-title"></h5>
+						</div>
+						<div class="spending-chart-item">
+							<div class="spending-chart-item-column" data-content="$34.91"></div>
+							<h5 class="spending-chart-item-title"></h5>
+						</div>
+						<div class="spending-chart-item">
+							<div class="spending-chart-item-column" data-content="$52.36"></div>
+							<h5 class="spending-chart-item-title"></h5>
+						</div>
+						<div class="spending-chart-item">
+							<div class="spending-chart-item-column" data-content="$31.07"></div>
+							<h5 class="spending-chart-item-title"></h5>
+						</div>
+						<div class="spending-chart-item">
+							<div class="spending-chart-item-column" data-content="$23.39"></div>
+							<h5 class="spending-chart-item-title"></h5>
+						</div>
+						<div class="spending-chart-item">
+							<div class="spending-chart-item-column" data-content="$43.28"></div>
+							<h5 class="spending-chart-item-title"></h5>
+						</div>
+						<div class="spending-chart-item">
+							<div class="spending-chart-item-column" data-content="$25.48"></div>
+							<h5 class="spending-chart-item-title"></h5>
+						</div>
+					</div>
+				</div>
+
+				<div class="monthly-info">
+					<div class="current">
+						<h4 class="current-title">Total this month</h4>
+						<span class="current-value">$478.33</span>
+					</div>
+					<div class="previous">
+						<span class="previous-rate">+2.4%</span>
+						<h4 class="previous-date">from last month</h4>
+					</div>
+				</div>
+			</main>
+		</div>
+
+		<script src="./script.js"></script>
+	</body>
+</html>

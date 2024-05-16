@@ -1,0 +1,205 @@
+// Colors
+$soft-red: hsl(10, 79%, 65%);
+$soft-red-8: hsla(10, 79%, 65%, 0.8);
+$cyan: hsl(186, 34%, 60%);
+$cyan-8: hsla(186, 34%, 60%, 0.8);
+
+$dark-brown: hsl(25, 47%, 15%);
+$medium-brown: hsl(28, 10%, 53%);
+$cream: hsl(27, 66%, 92%);
+$very-pale-orange: hsl(33, 100%, 98%);
+
+body {
+	font-size: 18px;
+	font-family: "DM Sans", sans-serif;
+	background-color: $cream;
+}
+
+.container {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+
+	header {
+		display: flex;
+		justify-content: space-between;
+		background-color: $soft-red;
+		padding: 24px;
+		border-radius: 8px;
+		margin-bottom: 24px;
+
+		.balance {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+
+			&-title {
+				color: $cream;
+				font-weight: 400;
+				font-size: 16px;
+			}
+
+			&-value {
+				font-weight: 700;
+				color: $very-pale-orange;
+				font-size: 24px;
+			}
+		}
+	}
+
+	main {
+		background-color: $very-pale-orange;
+		padding: 16px;
+		border-radius: 8px;
+
+		.spending-chart {
+			border-bottom: 3px solid $cream;
+			padding-bottom: 20px;
+
+			&-title {
+				margin-bottom: 52px;
+				font-size: 24px;
+				color: $dark-brown;
+			}
+
+			.spending-chart-items {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-end;
+
+				.spending-chart-item {
+					&-column {
+						width: 32px;
+						border-radius: 4px;
+						cursor: pointer;
+						position: relative;
+						transition: all 200ms;
+
+						&::before {
+							content: attr(data-content);
+							position: absolute;
+							left: 50%;
+							top: -36px;
+							transform: translateX(-50%);
+							font-size: 14px;
+							padding: 6px;
+							font-weight: 700;
+							border-radius: 4px;
+							background-color: $dark-brown;
+							color: $very-pale-orange;
+							display: none;
+						}
+
+						&:hover::before {
+							display: block;
+						}
+
+						&:hover {
+							background-color: $soft-red-8 !important; // Because javascript override this
+						}
+					}
+
+					&.maxVal {
+						.spending-chart-item-column {
+							&:hover {
+								background-color: $cyan-8 !important; // Because javascript override this
+							}
+						}
+					}
+
+					&-title {
+						text-align: center;
+						margin-top: 8px;
+						color: $medium-brown;
+					}
+				}
+			}
+		}
+
+		.monthly-info {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+			padding-top: 20px;
+			padding-bottom: 8px;
+
+			.current {
+				display: flex;
+				flex-direction: column;
+
+				&-title {
+					color: $medium-brown;
+				}
+
+				&-value {
+					color: $dark-brown;
+					font-size: 32px;
+					font-weight: 700;
+				}
+			}
+
+			.previous {
+				display: flex;
+				flex-direction: column;
+
+				&-rate {
+					text-align: right;
+					font-weight: 700;
+					color: $dark-brown;
+				}
+
+				&-date {
+					font-size: 16px;
+					color: $medium-brown;
+				}
+			}
+		}
+	}
+}
+
+// Responsive
+@media only screen and (min-width: 1440px) {
+	body {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+	}
+
+	.container {
+		max-width: 480px;
+
+		header {
+			.balance {
+				&-title {
+					font-size: 20px;
+				}
+
+				&-value {
+					font-size: 32px;
+				}
+			}
+		}
+
+		main {
+			padding: 24px;
+
+			.spending-chart {
+				&-title {
+					font-size: 32px;
+					margin-bottom: 72px;
+				}
+
+				.spending-chart-items {
+					.spending-chart-item {
+						&-column {
+							width: 48px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,150 @@
+body {
+  font-size: 18px;
+  font-family: "DM Sans", sans-serif;
+  background-color: hsl(27, 66%, 92%);
+}
+
+.container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.container header {
+  display: flex;
+  justify-content: space-between;
+  background-color: hsl(10, 79%, 65%);
+  padding: 24px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+.container header .balance {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.container header .balance-title {
+  color: hsl(27, 66%, 92%);
+  font-weight: 400;
+  font-size: 16px;
+}
+.container header .balance-value {
+  font-weight: 700;
+  color: hsl(33, 100%, 98%);
+  font-size: 24px;
+}
+.container main {
+  background-color: hsl(33, 100%, 98%);
+  padding: 16px;
+  border-radius: 8px;
+}
+.container main .spending-chart {
+  border-bottom: 3px solid hsl(27, 66%, 92%);
+  padding-bottom: 20px;
+}
+.container main .spending-chart-title {
+  margin-bottom: 52px;
+  font-size: 24px;
+  color: hsl(25, 47%, 15%);
+}
+.container main .spending-chart .spending-chart-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.container main .spending-chart .spending-chart-items .spending-chart-item-column {
+  width: 32px;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: all 200ms;
+}
+.container main .spending-chart .spending-chart-items .spending-chart-item-column::before {
+  content: attr(data-content);
+  position: absolute;
+  left: 50%;
+  top: -36px;
+  transform: translateX(-50%);
+  font-size: 14px;
+  padding: 6px;
+  font-weight: 700;
+  border-radius: 4px;
+  background-color: hsl(25, 47%, 15%);
+  color: hsl(33, 100%, 98%);
+  display: none;
+}
+.container main .spending-chart .spending-chart-items .spending-chart-item-column:hover::before {
+  display: block;
+}
+.container main .spending-chart .spending-chart-items .spending-chart-item-column:hover {
+  background-color: hsla(10, 79%, 65%, 0.8) !important;
+}
+.container main .spending-chart .spending-chart-items .spending-chart-item.maxVal .spending-chart-item-column:hover {
+  background-color: hsla(186, 34%, 60%, 0.8) !important;
+}
+.container main .spending-chart .spending-chart-items .spending-chart-item-title {
+  text-align: center;
+  margin-top: 8px;
+  color: hsl(28, 10%, 53%);
+}
+.container main .monthly-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 20px;
+  padding-bottom: 8px;
+}
+.container main .monthly-info .current {
+  display: flex;
+  flex-direction: column;
+}
+.container main .monthly-info .current-title {
+  color: hsl(28, 10%, 53%);
+}
+.container main .monthly-info .current-value {
+  color: hsl(25, 47%, 15%);
+  font-size: 32px;
+  font-weight: 700;
+}
+.container main .monthly-info .previous {
+  display: flex;
+  flex-direction: column;
+}
+.container main .monthly-info .previous-rate {
+  text-align: right;
+  font-weight: 700;
+  color: hsl(25, 47%, 15%);
+}
+.container main .monthly-info .previous-date {
+  font-size: 16px;
+  color: hsl(28, 10%, 53%);
+}
+
+@media only screen and (min-width: 1440px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  .container {
+    max-width: 480px;
+  }
+  .container header .balance-title {
+    font-size: 20px;
+  }
+  .container header .balance-value {
+    font-size: 32px;
+  }
+  .container main {
+    padding: 24px;
+  }
+  .container main .spending-chart-title {
+    font-size: 32px;
+    margin-bottom: 72px;
+  }
+  .container main .spending-chart .spending-chart-items .spending-chart-item-column {
+    width: 48px;
+  }
+}/*# sourceMappingURL=style.css.map */
